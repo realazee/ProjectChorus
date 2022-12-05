@@ -57,6 +57,38 @@ app.post('/interactions', async function (req, res) {
         },
       });
     }
+
+    // "coinflip' guild command
+    if(name === 'coinflip'){
+    //display the result of a coin flip
+      let randomNumber = Math.random()
+
+      if(randomNumber < 0.5){
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            // Fetches a random emoji to send from a helper function
+            content: 'Your coin landed as Heads!'
+          },
+        });
+      }
+      else{
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            // Fetches a random emoji to send from a helper function
+            content: 'Your coin landed as Tails!'
+          },
+        });
+      }
+
+    
+    }
+
+
+
+
+
     // "challenge" guild command
     if (name === 'challenge' && id) {
       const userId = req.body.member.user.id;

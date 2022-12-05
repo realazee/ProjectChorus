@@ -64,6 +64,13 @@ export const TEST_COMMAND = {
   description: 'Basic guild command',
   type: 1,
 };
+//coinflip command
+
+export const COINFLIP_COMMAND = {
+  name: 'coinflip',
+  description: 'flips a coin',
+  type: 1,
+};
 
 // Command containing options
 export const CHALLENGE_COMMAND = {
