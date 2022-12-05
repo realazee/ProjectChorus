@@ -13,6 +13,7 @@ import {
   CHALLENGE_COMMAND,
   TEST_COMMAND,
   HasGuildCommands,
+  COINFLIP_COMMAND,
 } from './commands.js';
 
 // Create an express app
@@ -39,6 +40,18 @@ app.post('/interactions', async function (req, res) {
     return res.send({ type: InteractionResponseType.PONG });
   }
 
+
+
+
+
+
+
+
+
+
+
+  //COMMAND LOGIC
+  
   /**
    * Handle slash command requests
    * See https://discord.com/developers/docs/interactions/application-commands#slash-commands
@@ -84,8 +97,6 @@ app.post('/interactions', async function (req, res) {
 
     
     }
-
-
 
 
 
@@ -210,9 +221,13 @@ app.post('/interactions', async function (req, res) {
 app.listen(PORT, () => {
   console.log('Listening on port', PORT);
 
+
+  //INSTALL COMMANDS
+
   // Check if guild commands from commands.js are installed (if not, install them)
   HasGuildCommands(process.env.APP_ID, process.env.GUILD_ID, [
     TEST_COMMAND,
     CHALLENGE_COMMAND,
+    COINFLIP_COMMAND,
   ]);
 });

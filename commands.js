@@ -58,6 +58,9 @@ function createCommandChoices() {
   return commandChoices;
 }
 
+
+//CREATE COMMAND OBJECT
+
 // Simple test command
 export const TEST_COMMAND = {
   name: 'test',
