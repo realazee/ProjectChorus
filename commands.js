@@ -1,11 +1,14 @@
 import { getRPSChoices } from './game.js';
 import { capitalize, DiscordRequest } from './utils.js';
 
+
+//TO DO: restore HasGuildCommand and create a new HasGlobalCommand for global commands
 export async function HasGuildCommands(appId, guildId, commands) {
   if (guildId === '' || appId === '') return;
 
   commands.forEach((c) => HasGuildCommand(appId, guildId, c));
 }
+
 
 // Checks for a command
 async function HasGuildCommand(appId, guildId, command) {
@@ -31,6 +34,7 @@ async function HasGuildCommand(appId, guildId, command) {
   }
 }
 
+//TO DO: Restore InstallGuildCommand and create a new InstallGlobalCommand for global commands
 // Installs a command
 export async function InstallGuildCommand(appId, guildId, command) {
   // API endpoint to get and post guild commands

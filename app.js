@@ -59,7 +59,7 @@ app.post('/interactions', async function (req, res) {
   if (type === InteractionType.APPLICATION_COMMAND) {
     const { name } = data;
 
-    // "test" guild command
+    // "test" global command
     if (name === 'test') {
       // Send a message into the channel where command was triggered from
       return res.send({
@@ -71,7 +71,7 @@ app.post('/interactions', async function (req, res) {
       });
     }
 
-    // "coinflip' guild command
+    // "coinflip' global command
     if(name === 'coinflip'){
     //display the result of a coin flip
       let randomNumber = Math.random()
@@ -80,7 +80,6 @@ app.post('/interactions', async function (req, res) {
         return res.send({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
-            // Fetches a random emoji to send from a helper function
             content: 'Your coin landed as Heads!'
           },
         });
@@ -89,7 +88,6 @@ app.post('/interactions', async function (req, res) {
         return res.send({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
-            // Fetches a random emoji to send from a helper function
             content: 'Your coin landed as Tails!'
           },
         });
@@ -100,7 +98,7 @@ app.post('/interactions', async function (req, res) {
 
 
 
-    // "challenge" guild command
+    // "challenge" global command
     if (name === 'challenge' && id) {
       const userId = req.body.member.user.id;
       // User's object choice
@@ -134,6 +132,14 @@ app.post('/interactions', async function (req, res) {
         },
       });
     }
+    //
+
+
+    //task: add ping command here
+    //task: add current time command here
+
+
+  
   }
 
   /**
@@ -223,6 +229,7 @@ app.listen(PORT, () => {
 
 
   //INSTALL COMMANDS
+  //TO DO: add HasGlobalCommand 
 
   // Check if guild commands from commands.js are installed (if not, install them)
   HasGuildCommands(process.env.APP_ID, process.env.GUILD_ID, [
