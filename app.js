@@ -13,6 +13,7 @@ import {
   CHALLENGE_COMMAND,
   TEST_COMMAND,
   HasGuildCommands,
+  HasGlobalCommands,
   COINFLIP_COMMAND,
 } from './commands.js';
 
@@ -234,6 +235,11 @@ app.listen(PORT, () => {
   // Check if guild commands from commands.js are installed (if not, install them)
   HasGuildCommands(process.env.APP_ID, process.env.GUILD_ID, [
     TEST_COMMAND,
+  ]);
+  
+
+
+  HasGlobalCommands(process.env.APP_ID, [
     CHALLENGE_COMMAND,
     COINFLIP_COMMAND,
   ]);
