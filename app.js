@@ -52,7 +52,8 @@ app.post('/interactions', async function (req, res) {
 
 
   //COMMAND LOGIC
-  
+  //Don't forget to import from commands.js if adding any commands or making changes to commands.js
+
   /**
    * Handle slash command requests
    * See https://discord.com/developers/docs/interactions/application-commands#slash-commands
@@ -96,8 +97,6 @@ app.post('/interactions', async function (req, res) {
 
     
     }
-
-
 
     // "challenge" global command
     if (name === 'challenge' && id) {
@@ -230,7 +229,6 @@ app.listen(PORT, () => {
 
 
   //INSTALL COMMANDS
-  //TO DO: add HasGlobalCommand 
 
   // Check if guild commands from commands.js are installed (if not, install them)
   HasGuildCommands(process.env.APP_ID, process.env.GUILD_ID, [
@@ -238,7 +236,7 @@ app.listen(PORT, () => {
   ]);
   
 
-
+  // Check if global commands from commands.js are installed (if not, install them)
   HasGlobalCommands(process.env.APP_ID, [
     CHALLENGE_COMMAND,
     COINFLIP_COMMAND,

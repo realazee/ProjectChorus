@@ -17,7 +17,7 @@ export async function HasGuildCommands(appId, guildId, commands) {
 
 
 
-// Checks for a command
+// Checks for a global command
 async function HasGlobalCommand(appId, command) {
   // API endpoint to get and post guild commands
   const endpoint = `applications/${appId}/commands`;
@@ -42,7 +42,7 @@ async function HasGlobalCommand(appId, command) {
 }
 
 
-// Checks for a command
+// Checks for a guild command
 async function HasGuildCommand(appId, guildId, command) {
   // API endpoint to get and post guild commands
   const endpoint = `applications/${appId}/guilds/${guildId}/commands`;
@@ -69,7 +69,7 @@ async function HasGuildCommand(appId, guildId, command) {
 
 
 
-// Installs a command
+// Installs a guild command
 export async function InstallGuildCommand(appId, guildId, command) {
   // API endpoint to get and post guild commands
   const endpoint = `applications/${appId}/guilds/${guildId}/commands`;
@@ -81,6 +81,7 @@ export async function InstallGuildCommand(appId, guildId, command) {
   }
 }
 
+//Installs a global command
 export async function InstallGlobalCommand(appId, command) {
   // API endpoint to get and post guild commands
   const endpoint = `applications/${appId}/commands`;
@@ -116,8 +117,8 @@ export const TEST_COMMAND = {
   description: 'Basic guild command',
   type: 1,
 };
-//coinflip command
 
+//coinflip command
 export const COINFLIP_COMMAND = {
   name: 'coinflip',
   description: 'flips a coin',
