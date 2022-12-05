@@ -15,6 +15,7 @@ import {
   HasGuildCommands,
   HasGlobalCommands,
   COINFLIP_COMMAND,
+  DICE_COMMAND,
 } from './commands.js';
 
 // Create an express app
@@ -97,6 +98,20 @@ app.post('/interactions', async function (req, res) {
 
     
     }
+
+    // 'dice' global command
+    if (name == 'dice') {
+      let roll = Math.floor(Math.random() * 6) + 1
+
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: 'You rolled ' + roll
+        },
+      });
+
+    }
+
 
     // "challenge" global command
     if (name === 'challenge' && id) {
@@ -240,5 +255,6 @@ app.listen(PORT, () => {
   HasGlobalCommands(process.env.APP_ID, [
     CHALLENGE_COMMAND,
     COINFLIP_COMMAND,
+    DICE_COMMAND,
   ]);
 });
