@@ -36,12 +36,12 @@ Configuring the app is covered in detail in the [getting started guide](https://
 
 First clone the project:
 ```
-git clone https://github.com/discord/discord-example-app.git
+git clone https://github.com/realazee/ProjectChorus.git
 ```
 
 Then navigate to its directory and install dependencies:
 ```
-cd discord-example-app
+cd ProjectChorus
 npm install
 ```
 ### Get app credentials
