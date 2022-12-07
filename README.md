@@ -1,4 +1,4 @@
-# COdename Project Chorus
+# Codename Project Chorus
 
 This project contains a basic Discord app written in JavaScript, modified and expanded upon from the [getting started guide](https://discord.com/developers/docs/getting-started).
 
