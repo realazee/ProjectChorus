@@ -1,10 +1,10 @@
-# Getting Started app for Discord
+# COdename Project Chorus
 
-This project contains a basic rock-paper-scissors-style Discord app written in JavaScript, built for the [getting started guide](https://discord.com/developers/docs/getting-started).
+This project contains a basic Discord app written in JavaScript, modified and expanded upon from the [getting started guide](https://discord.com/developers/docs/getting-started).
 
 ![Demo of app](/assets/getting-started-demo.gif?raw=true)
 
-> ✨ A version of this code is also hosted **[on Glitch 🎏](https://glitch.com/~getting-started-discord)** and **[on Replit 🌀](https://replit.com/@shaydewael/discord-example-app)**
+> ✨ A version of the original code is also hosted **[on Glitch 🎏](https://glitch.com/~getting-started-discord)** and **[on Replit 🌀](https://replit.com/@shaydewael/discord-example-app)**
 
 ## Project structure
 Below is a basic overview of the project structure:
