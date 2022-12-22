@@ -115,11 +115,10 @@ app.post('/interactions', async function (req, res) {
 
     //"win' global command"
     if(name == 'win'){
-      const userId = req.body.member.user.id;
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: 'W <@${userId}>'
+          content: `W <@${req.body.member.user.id}>`
         },
       });
     }
