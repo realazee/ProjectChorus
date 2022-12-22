@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import { verifyKey } from 'discord-interactions';
 
 export function VerifyDiscordRequest(clientKey) {
-  return function (req, res, buf, encoding) {
+  return function(req, res, buf, encoding) {
     const signature = req.get('X-Signature-Ed25519');
     const timestamp = req.get('X-Signature-Timestamp');
 
@@ -31,6 +31,7 @@ export async function DiscordRequest(endpoint, options) {
   });
   // throw API errors
   if (!res.ok) {
+    console.log("THE BOT TOKEN IS: " + process.env.DISCORD_TOKEN)
     const data = await res.json();
     console.log(res.status);
     throw new Error(JSON.stringify(data));
@@ -41,7 +42,7 @@ export async function DiscordRequest(endpoint, options) {
 
 // Simple method that returns a random emoji from list
 export function getRandomEmoji() {
-  const emojiList = ['😭','😄','😌','🤓','😎','😤','🤖','😶‍🌫️','🌏','📸','💿','👋','🌊','✨'];
+  const emojiList = ['😭', '😄', '😌', '🤓', '😎', '😤', '🤖', '😶‍🌫️', '🌏', '📸', '💿', '👋', '🌊', '✨'];
   return emojiList[Math.floor(Math.random() * emojiList.length)];
 }
 

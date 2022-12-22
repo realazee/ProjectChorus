@@ -16,6 +16,7 @@ import {
   HasGlobalCommands,
   COINFLIP_COMMAND,
   DICE_COMMAND,
+  WIN_COMMAND,
 } from './commands.js';
 
 // Create an express app
@@ -110,6 +111,17 @@ app.post('/interactions', async function (req, res) {
         },
       });
 
+    }
+
+    //"win' global command"
+    if(name == 'win'){
+      const userId = req.body.member.user.id;
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: 'W <@${userId}>'
+        },
+      });
     }
 
 
@@ -256,5 +268,6 @@ app.listen(PORT, () => {
     CHALLENGE_COMMAND,
     COINFLIP_COMMAND,
     DICE_COMMAND,
+    WIN_COMMAND
   ]);
 });

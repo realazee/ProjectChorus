@@ -132,6 +132,13 @@ export const DICE_COMMAND = {
   type: 1,
 };
 
+//win command
+export const WIN_COMMAND = {
+  name: 'dice',
+  description: 'Rolls a dice',
+  type: 1,
+};
+
 // Command containing options
 export const CHALLENGE_COMMAND = {
   name: 'challenge',
