@@ -134,8 +134,8 @@ export const DICE_COMMAND = {
 
 //win command
 export const WIN_COMMAND = {
-  name: 'dice',
-  description: 'Rolls a dice',
+  name: 'win',
+  description: 'pings the person calling the command with w',
   type: 1,
 };
 
