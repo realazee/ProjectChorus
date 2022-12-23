@@ -67,11 +67,11 @@ app.post('/interactions', async function (req, res) {
     const { name } = data;
 
     //"lose" global command
-    if(name == 'lose' && user){
+    if (name == 'lose') {
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `L <@${user}>`
+          content: `L <@${req.body.data.options[0].value}>`
         },
       });
     }
@@ -285,6 +285,7 @@ app.listen(PORT, () => {
     WIN_COMMAND,
     LOSE_COMMAND,
   ]);
+  //InstallGlobalCommand(process.env.APP_ID, LOSE_COMMAND)
 
 
   // InstallGlobalCommand(process.env.APP_ID, [
