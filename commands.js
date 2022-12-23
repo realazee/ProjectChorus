@@ -136,6 +136,14 @@ export const DICE_COMMAND = {
 export const WIN_COMMAND = {
   name: 'win',
   description: 'pings the person calling the command with w',
+  options: [
+    {
+      type: 6,
+      name: 'user',
+      description: 'Pick your desired winner',
+      required: true,
+    },
+  ],
   type: 1,
 };
 //lose command
