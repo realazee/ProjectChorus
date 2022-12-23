@@ -144,7 +144,7 @@ export const LOSE_COMMAND = {
   description: 'pings the person specified with L',
   options: [
     {
-      type: 2,
+      type: 6,
       name: 'User',
       description: 'Pick your desired loser',
       required: true,

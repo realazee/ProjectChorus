@@ -125,11 +125,11 @@ app.post('/interactions', async function (req, res) {
     }
 
     //"lose" global command
-    if(name == 'lose' && id){
+    if(name == 'lose'){
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `L <@${id}>`
+          content: `L <@${interaction.options.getMember('User')}>`
         },
       });
     }
