@@ -14,8 +14,8 @@ import {
   TEST_COMMAND,
   HasGuildCommands,
   HasGlobalCommands,
-  InstallGlobalCommands,
-  InstallGuildCommands,
+  InstallGlobalCommand,
+  InstallGuildCommand,
   COINFLIP_COMMAND,
   DICE_COMMAND,
   WIN_COMMAND,
@@ -287,7 +287,7 @@ app.listen(PORT, () => {
   // ]);
 
 
-  InstallGlobalCommands(process.env.APP_ID, [
+  InstallGlobalCommand(process.env.APP_ID, [
     CHALLENGE_COMMAND,
     COINFLIP_COMMAND,
     DICE_COMMAND,
