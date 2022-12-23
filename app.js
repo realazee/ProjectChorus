@@ -17,6 +17,7 @@ import {
   COINFLIP_COMMAND,
   DICE_COMMAND,
   WIN_COMMAND,
+  LOSE_COMMAND,
 } from './commands.js';
 
 // Create an express app
@@ -113,12 +114,22 @@ app.post('/interactions', async function (req, res) {
 
     }
 
-    //"win' global command"
+    //"win" global command
     if(name == 'win'){
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
           content: `W <@${req.body.member.user.id}>`
+        },
+      });
+    }
+
+    //"lose" global command
+    if(name == 'lose' && id){
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: `L <@${id}>`
         },
       });
     }
@@ -267,6 +278,7 @@ app.listen(PORT, () => {
     CHALLENGE_COMMAND,
     COINFLIP_COMMAND,
     DICE_COMMAND,
-    WIN_COMMAND
+    WIN_COMMAND,
+    LOSE_COMMAND,
   ]);
 });

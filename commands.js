@@ -138,6 +138,12 @@ export const WIN_COMMAND = {
   description: 'pings the person calling the command with w',
   type: 1,
 };
+//lose command
+export const LOSE_COMMAND = {
+  name: 'lose',
+  description: 'pings the person specified with L',
+  type: 1,
+};
 
 // Command containing options
 export const CHALLENGE_COMMAND = {
