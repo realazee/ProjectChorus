@@ -278,13 +278,13 @@ app.listen(PORT, () => {
   
 
   // Check if global commands from commands.js are installed (if not, install them)
-  HasGlobalCommands(process.env.APP_ID, [
-    CHALLENGE_COMMAND,
-    COINFLIP_COMMAND,
-    DICE_COMMAND,
-    WIN_COMMAND,
-    LOSE_COMMAND,
-  ]);
+  // HasGlobalCommands(process.env.APP_ID, [
+  //   CHALLENGE_COMMAND,
+  //   COINFLIP_COMMAND,
+  //   DICE_COMMAND,
+  //   WIN_COMMAND,
+  //   LOSE_COMMAND,
+  // ]);
 
 
   InstallGlobalCommands(process.env.APP_ID, [
