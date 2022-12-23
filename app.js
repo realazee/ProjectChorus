@@ -115,9 +115,13 @@ app.post('/interactions', async function(req, res) {
 
     // 'dice' global command
     if (name == 'dice') {
-      let roll = Math.floor(Math.random() * req.body.data.options[1].value) + 1;
-      roll = roll * req.body.data.options[0].value;
-
+      let rollSum = 0;
+      let roll;
+      for (let i = 0; i < req.body.data.options[0].value; i++) {
+        roll = Math.floor(Math.random() * req.body.data.options[1].value) + 1;
+        rollSum += roll;
+      }
+      
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
