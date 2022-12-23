@@ -64,6 +64,16 @@ app.post('/interactions', async function (req, res) {
   if (type === InteractionType.APPLICATION_COMMAND) {
     const { name } = data;
 
+    //"lose" global command
+    if(name == 'lose' && user){
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: `L <@${user}>`
+        },
+      });
+    }
+
     // "test" global command
     if (name === 'test') {
       // Send a message into the channel where command was triggered from
@@ -124,15 +134,7 @@ app.post('/interactions', async function (req, res) {
       });
     }
 
-    //"lose" global command
-    if(name == 'lose' && user){
-      return res.send({
-        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: {
-          content: `L <@${user}>`
-        },
-      });
-    }
+    
 
 
     // "challenge" global command
@@ -275,6 +277,15 @@ app.listen(PORT, () => {
 
   // Check if global commands from commands.js are installed (if not, install them)
   HasGlobalCommands(process.env.APP_ID, [
+    CHALLENGE_COMMAND,
+    COINFLIP_COMMAND,
+    DICE_COMMAND,
+    WIN_COMMAND,
+    LOSE_COMMAND,
+  ]);
+
+
+  InstallGlobalCommands(process.env.APP_ID, [
     CHALLENGE_COMMAND,
     COINFLIP_COMMAND,
     DICE_COMMAND,
