@@ -129,7 +129,7 @@ app.post('/interactions', async function (req, res) {
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `L <@${interaction.options.getMember('User')}>`
+          content: `L <@${req.body.data.options[0].value}>`
         },
       });
     }
