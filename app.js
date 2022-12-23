@@ -14,6 +14,8 @@ import {
   TEST_COMMAND,
   HasGuildCommands,
   HasGlobalCommands,
+  InstallGlobalCommands,
+  InstallGuildCommands,
   COINFLIP_COMMAND,
   DICE_COMMAND,
   WIN_COMMAND,
