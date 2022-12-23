@@ -129,6 +129,20 @@ export const COINFLIP_COMMAND = {
 export const DICE_COMMAND = {
   name: 'dice',
   description: 'Rolls a dice',
+  options: [
+    {
+      type: 4,
+      name: "Dice count",
+      description: "The number of dice you want to roll.",
+      required: true,
+    },
+    {
+      type: 4,
+      name: "Sides",
+      description: "The number of sides per dice.",
+      required: true,
+    },
+  ], 
   type: 1,
 };
 
