@@ -132,17 +132,17 @@ export const DICE_COMMAND = {
   options: [
     {
       type: 4,
-      name: "Dice count",
-      description: "The number of dice you want to roll.",
+      name: 'count',
+      description: 'The number of dice you want to roll.',
       required: true,
     },
     {
       type: 4,
-      name: "Sides",
-      description: "The number of sides per dice.",
+      name: 'sides',
+      description: 'The number of sides per dice.',
       required: true,
     },
-  ], 
+  ],
   type: 1,
 };
 

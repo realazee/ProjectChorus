@@ -35,7 +35,7 @@ const activeGames = {};
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
  */
-app.post('/interactions', async function (req, res) {
+app.post('/interactions', async function(req, res) {
   // Interaction type and data
   const { type, id, data } = req.body;
 
@@ -89,11 +89,11 @@ app.post('/interactions', async function (req, res) {
     }
 
     // "coinflip' global command
-    if(name === 'coinflip'){
-    //display the result of a coin flip
+    if (name === 'coinflip') {
+      //display the result of a coin flip
       let randomNumber = Math.random()
 
-      if(randomNumber < 0.5){
+      if (randomNumber < 0.5) {
         return res.send({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
@@ -101,7 +101,7 @@ app.post('/interactions', async function (req, res) {
           },
         });
       }
-      else{
+      else {
         return res.send({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
@@ -110,7 +110,7 @@ app.post('/interactions', async function (req, res) {
         });
       }
 
-    
+
     }
 
     // 'dice' global command
@@ -128,7 +128,7 @@ app.post('/interactions', async function (req, res) {
     }
 
     //"win" global command
-    if(name == 'win'){
+    if (name == 'win') {
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
@@ -137,7 +137,7 @@ app.post('/interactions', async function (req, res) {
       });
     }
 
-    
+
 
 
     // "challenge" global command
@@ -181,7 +181,7 @@ app.post('/interactions', async function (req, res) {
     //task: add current time command here
 
 
-  
+
   }
 
   /**
@@ -276,7 +276,7 @@ app.listen(PORT, () => {
   HasGuildCommands(process.env.APP_ID, process.env.GUILD_ID, [
     TEST_COMMAND,
   ]);
-  
+
 
   // Check if global commands from commands.js are installed (if not, install them)
   HasGlobalCommands(process.env.APP_ID, [
@@ -286,7 +286,7 @@ app.listen(PORT, () => {
     WIN_COMMAND,
     LOSE_COMMAND,
   ]);
-  //InstallGlobalCommand(process.env.APP_ID, LOSE_COMMAND)
+  //InstallGlobalCommand(process.env.APP_ID, DICE_COMMAND)
 
 
   // InstallGlobalCommand(process.env.APP_ID, [
