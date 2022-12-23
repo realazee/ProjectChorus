@@ -31,7 +31,7 @@ export async function DiscordRequest(endpoint, options) {
   });
   // throw API errors
   if (!res.ok) {
-    console.log("THE BOT TOKEN IS: " + process.env.DISCORD_TOKEN)
+    //console.log("THE BOT TOKEN IS: " + process.env.DISCORD_TOKEN)
     const data = await res.json();
     console.log(res.status);
     throw new Error(JSON.stringify(data));
