@@ -145,7 +145,7 @@ export const LOSE_COMMAND = {
   options: [
     {
       type: 6,
-      name: 'User',
+      name: 'user',
       description: 'Pick your desired loser',
       required: true,
     },
